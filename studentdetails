@@ -1,0 +1,39 @@
+import numpy as np
+import pandas as pd
+
+# STEP 1: Student data
+
+names= ["Aman", "Rahul", "Priya", "Karan", "Simran"]
+
+marks= np.array([78, 85, 92, 67, 88])
+
+# STEP 2: Create a DataFrame
+
+data= {
+    "Name": names,
+    "Marks": marks
+}
+
+df= pd.DataFrame(data)
+
+# STEP 3: Display student records
+
+print("\nSTUDENT RECORDS")
+print(df)
+
+# STEP 4: Calculate average marks
+
+average= np.mean(marks)
+
+print("\nAverage Marks:", average)
+
+# STEP 5: Find highest marks
+
+highest= np.max(marks)
+
+print("Highest Marks:", highest)
+
+# STEP 6: Find the topper
+
+topper= df.loc[df["Marks"].idxmax()]
+print("Topper:", topper["Name"])
